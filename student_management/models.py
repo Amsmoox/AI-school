@@ -58,3 +58,25 @@ class Discipline(models.Model):
 
     def __str__(self):
         return f"{self.student} - {self.incident_date} - {self.incident_type}"
+    
+
+class Subject(models.Model):
+    name = models.CharField(max_length=100)
+    code = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.name
+
+class Assessment(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+    assessment_type = models.CharField(max_length=100)
+    date = models.DateField()
+    score = models.DecimalField(max_digits=5, decimal_places=2)
+    remarks = models.TextField(blank=True, null=True)
+    validated = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.student} - {self.subject} - {self.assessment_type} - {self.score}"
+
+
