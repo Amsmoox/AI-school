@@ -46,3 +46,15 @@ class Attendance(models.Model):
 
     def __str__(self):
         return f"{self.student} - {self.date} - {self.status}"
+    
+class Discipline(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    incident_date = models.DateField()
+    incident_type = models.CharField(max_length=100)
+    description = models.TextField()
+    action_taken = models.CharField(max_length=255)
+    reported_by = models.CharField(max_length=100)
+    remarks = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.student} - {self.incident_date} - {self.incident_type}"
