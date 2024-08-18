@@ -80,3 +80,20 @@ class Assessment(models.Model):
         return f"{self.student} - {self.subject} - {self.assessment_type} - {self.score}"
 
 
+class Skill(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+class SkillAssessment(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    skill = models.ForeignKey(Skill, on_delete=models.CASCADE)
+    assessment_date = models.DateField()
+    proficiency_level = models.CharField(max_length=50)
+    assessed_by = models.CharField(max_length=100)
+    remarks = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.student} - {self.skill} - {self.proficiency_level}"
