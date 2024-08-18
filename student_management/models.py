@@ -36,3 +36,13 @@ class Student(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name} ({self.student_id})"
+
+class Attendance(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    date = models.DateField()
+    status = models.CharField(max_length=10, choices=[('Present', 'Present'), ('Absent', 'Absent'), ('Late', 'Late')])
+    reason_for_absence = models.TextField(blank=True, null=True)
+    remarks = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.student} - {self.date} - {self.status}"
