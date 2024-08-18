@@ -118,3 +118,26 @@ class Timetable(models.Model):
 
     def __str__(self):
         return f"{self.class_assigned} - {self.subject} - {self.day_of_week}"
+
+#Educationnal Games
+# class EducationalGame(models.Model):
+#     title = models.CharField(max_length=255)
+#     description = models.TextField()
+#     link = models.URLField()
+#     subject = models.ForeignKey(Subject, on_delete=models.SET_NULL, null=True)
+#     grade_level = models.CharField(max_length=20, blank=True, null=True)
+#     created_at = models.DateTimeField(auto_now_add=True)
+
+#     def __str__(self):
+#         return self.title
+
+# class GameAssignment(models.Model):
+#     student = models.ForeignKey(Student, on_delete=models.CASCADE)
+#     game = models.ForeignKey(EducationalGame, on_delete=models.CASCADE)
+#     assigned_date = models.DateField()
+#     completion_status = models.CharField(max_length=10, choices=[('Completed', 'Completed'), ('Pending', 'Pending')])
+#     completion_date = models.DateField(blank=True, null=True)
+
+#     def __str__(self):
+#         return f"{self.student} - {self.game} - {self.completion_status}"
+
