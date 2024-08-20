@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Student, Attendance, Discipline, Assessment, SkillAssessment, Timetable, EducationalGame, GameAssignment
+from .models import Student, Attendance, Discipline, Assessment, SkillAssessment, Timetable #, EducationalGame, GameAssignment
 
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:

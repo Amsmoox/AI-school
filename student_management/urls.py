@@ -1,5 +1,5 @@
 from django.urls import path
-from .api import StudentListView, AttendanceView, DisciplineView, AssessmentView, SkillAssessmentView, TimetableView, EducationalGameView, GameAssignmentView
+from .api import StudentListView #, AttendanceView, DisciplineView, AssessmentView, SkillAssessmentView, TimetableView, EducationalGameView, GameAssignmentView
 
 urlpatterns = [
     path('api/students/', StudentListView.as_view(), name='student-list'),

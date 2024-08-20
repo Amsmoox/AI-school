@@ -2,8 +2,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
-from .models import Student, Attendance, Discipline, Assessment, SkillAssessment, Timetable, EducationalGame, GameAssignment
-from .serializers import StudentSerializer, AttendanceSerializer, DisciplineSerializer, AssessmentSerializer, SkillAssessmentSerializer, TimetableSerializer, EducationalGameSerializer, GameAssignmentSerializer
+from .models import Student #, Attendance, Discipline, Assessment, SkillAssessment, Timetable, EducationalGame, GameAssignment
+from .serializers import StudentSerializer #, AttendanceSerializer, DisciplineSerializer, AssessmentSerializer, SkillAssessmentSerializer, TimetableSerializer, EducationalGameSerializer, GameAssignmentSerializer
 
 class StudentListView(APIView):
     permission_classes = [IsAuthenticated]
