@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'AIschool.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'AIschool',
+        'NAME': 'NAME',
         'USER': 'postgres',
-        'PASSWORD': 'Mohylah2@',
+        'PASSWORD': 'CODE@',
         'HOST': 'localhost',
         'PORT': '5432',
     }
